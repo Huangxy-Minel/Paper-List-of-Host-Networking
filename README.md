@@ -54,14 +54,13 @@ It is recommended in the order of the list.
 - 14-NSDI-mTCP-a Highly Scalable User-level TCP Stack for Multicore Systems
 - 22-SIGCOMM-Towards us Tail Latency and Terabit Ethernet - Disaggregating the Host Network Stack
 
-**[Memory]**
+**[Memory Efficiency]**
 - 23-SIGCOMM-Host Congestion Control
+- 23-OSDI-Ensō: A Streaming Interface for NIC-Application Communication
+- 23-OSDI-ShRing: Networking with Shared Receive Rings
 
 **[Datapath OS]**
 - 14-OSDI-IX: A Protected Dataplane Operating System for High Throughput and Low Latency
 - 21-SOSP-The Demikernel Datapath OS Architecture for Microsecond-scale Datacenter Systems
 - 24-NSDI-Making Kernel Bypass Practical for the Cloud with Junction
 
-### 6. Driver and Firmware Design
-- 23-OSDI-Ensō: A Streaming Interface for NIC-Application Communication
-- 23-OSDI-ShRing: Networking with Shared Receive Rings
