@@ -223,6 +223,7 @@ Given the growing reliance on SmartNICs for processing network workloads at the 
 - 24-EuroSys-SmartNIC Security Isolation in the Cloud with S-NIC
 
 <h2 id="3">3 Open-Source Projects</h2>
+
 - [DPDK](https://www.dpdk.org/): The Open Source Data Plane Development Kit Accelerating Network Performance
 - [rdma-core](https://github.com/linux-rdma/rdma-core): RDMA core userspace libraries and daemons
 - [open-rdma](https://github.com/datenlord/open-rdma): RoCE v2 hardware and software implementation
