@@ -222,6 +222,16 @@ Given the growing reliance on SmartNICs for processing network workloads at the 
 - 24-EuroSys-HD-IOV: SW-HW Co-designed I/O Virtualization with Scalability and Flexibility for Hyper-Density Cloud
 - 24-EuroSys-SmartNIC Security Isolation in the Cloud with S-NIC
 
-<h2 id="3">2 Open-Source Projects</h2>
+<h2 id="3">3 Open-Source Projects</h2>
+- [DPDK](https://www.dpdk.org/): The Open Source Data Plane Development Kit Accelerating Network Performance
+- [rdma-core](https://github.com/linux-rdma/rdma-core): RDMA core userspace libraries and daemons
+- [open-rdma](https://github.com/datenlord/open-rdma): RoCE v2 hardware and software implementation
+- [XDP](https://github.com/xdp-project/xdp-tutorial): eXpress Data Path (XDP) system
+- [OvS](https://github.com/openvswitch/ovs): Production Quality, Multilayer Open Virtual Switch
+- [Katran](https://github.com/facebookincubator/katran): A high performance layer 4 load balancer
+- [eRPC](https://github.com/erpc-io/eRPC): Efficient RPCs for datacenter networks
+- [Junction](https://github.com/JunctionOS/junction): Next-generation datacenter OS built on kernel bypass to speed up unmodified code while improving platform density and security
+- [corundum](https://github.com/corundum/corundum): Open source FPGA-based NIC and platform for in-network compute
+- [DOCA](https://developer.nvidia.com/networking/doca): Accelerate application development for NVIDIA BlueField and ConnectX networking devices
 
-<h2 id="4">2 Researchers</h2>
+<h2 id="4">4 Researchers</h2>
