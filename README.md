@@ -14,6 +14,10 @@ The page is basically divided into two parts: (a) a selected readings to constru
 - [1.3 Shorten or Simplify Data Path](#1.3)
 - [1.4 Profiling](#1.4)
 - [1.5 Resource Management](#1.5)
+#### [2 Research Topics](#2)
+- [2.1 Network Subsystem Architecture](#2.1)
+  - d
+- [2.2 SmartNIC Infrastructure](#2.2)
 
 <h2 id="1">1 Selected Readings</h2>
 It is recommended in the order of the list.
@@ -76,3 +80,127 @@ It is recommended in the order of the list.
 - 21-SOSP-The Demikernel Datapath OS Architecture for Microsecond-scale Datacenter Systems
 - 24-NSDI-Making Kernel Bypass Practical for the Cloud with Junction
 
+---
+
+<h2 id="2">2 Reseach Topics in HostNet</h2>
+This section serves as a record of the exploration and previous topics in HostNet @ iSING. Each section will highlight core questions that our community aims to address. By analyzing this page, we aim to derive the emerging research trends in network systems, starting from the foundational TCP/IP architecture with socket programming in Linux operating systems.
+
+**Contribute to this section**: Please write an issue to summarize the topic, a short description, questions, and related works that you think interesting!
+
+<h3 id="2.1">2.1 Network Subsystem Architecture</h3>
+
+The TCP/IP architecture, which primarily relies on the Linux kernel to manage and process the network subsystem, often leads to CPU overload. In response, our community is exploring a re-design of the network subsystem architecture, shifting from kernel-centric and CPU-centric models to disaggregated approaches. This includes the introduction of kernel-bypass architectures, NIC offloads, RDMA, and other innovations.
+
+#### Sub-Topic 1: Network Stack Design and Architecture
+**[Questions]**
+- How can we simplify or accelerate network stack processing to alleviate the CPU burden?
+- Can we design a high-performance, highly flexible network stack architecture?
+
+**[Related Works]**
+- **18-SIGCOMM-Revisiting Network Support for RDMA**
+- 20-NSDI-AccelTCP-Accelerating Network Applications with Stateful TCP Offloading
+- 20-SIGCOMM-1RMA-Re-envisioning Remote Memory Access for Multi-tenant Datacenters
+- 21-SOSR-NanoTransport: A Low-Latency, Programmable Transport Layer for NICs
+- 21-OSDI-The nanoPU-A Nanosecond Network Stack for Datacenters
+- 22-NSDI-FlexTOE- Flexible TCP Offload with Fine-Grained Parallelism
+- 23-NSDI-Rearchitecting the TCP Stack for IO-Offloaded Content Delivery
+- **23-NSDI-SRNIC- A Scalable Architecture for RDMA NICs**
+- **24-OSDI-High-throughput and Flexible Host Networking for Accelerated Computing**
+
+#### Sub-Topic 2: Network Function (NF) Chain
+**[Questions]**
+- How can we achieve line-rate throughput for a given NF chain?
+- Can we design a programming and execution framework NFs?
+
+**[Related Works]**
+- 14-SIGCOMM-OpenNF-Enabling Innovation in Network Function Control
+- **15-NSDI-The Design and Implementation of Open vSwitch**
+- 17-SIGCOMM-NFP-Enabling Network Function Parallelism in NFV
+- 17-SIGCOMM-NFVnice-Dynamic Backpressure and Scheduling for NFV Service Chains
+- 18-NSDI-Azure Accelerated Networking-SmartNICs in the Public Cloud
+- **18-CoNEXT-The eXpress Data Path-Fast Programmable Packet Processing in the Operating System Kernel**
+- 20-OSDI-A Simpler and Faster NIC Driver Model for Network Functions
+- 22-ASPLOS-The Benefits of General-Purpose On-NIC Memory
+- **22-NSDI-Tiara-A Scalable and Efficient Hardware Acceleration Architecture for Stateful Layer-4 Load Balancing**
+- 23-NSDI-Disaggregating Stateful Network Functions
+- 24-EuroSys-Hoda-a High-performance Open vSwitch Dataplane with Multiple Specialized Data Paths
+- 24-ATC-CyberStar-Simple, Elastic and Cost-Effective Network Functions Management in Cloud Network at Scale
+
+#### Sub-Topic 3: Domain-Specific Network Architecture
+**[Questions]**
+- How can we achieve 100Gbps or higher network transmission for a specific application?
+- Can we accelerate network-intensive applications using RDMA NICs or SmartNICs?
+
+**[Related Works]**
+- **14-NSDI-FaRM-Fast Remote Memory**
+- 14-SIGCOMM-Using RDMA Efficiently for Key-Value Services
+- **16-OSDI-FaSST-Fast, Scalable and Simple Distributed Transactions with Two-Sided (RDMA) Datagram RPCs**
+- 17-SOSP-KV-Direct-High-Performance In-Memory Key-Value Store with Programmable NIC
+- 18-OSDI-Deconstructing RDMA-enabled Distributed Transactions- Hybrid is Better
+- **19-NSDI-Datacenter RPCs can be General and Fast**
+- 19-SIGCOMM-SocksDirect-Datacenter sockets can be fast and compatible
+- 20-NSDI-TCP≈RDMA-CPU-efficient Remote Storage Access with i10
+- 20-OSDI-Fast RDMA-based Ordered Key-Value Store using Remote Learned Cache
+- 20-ISCA-The NEBULA RPC-Optimized Architecture
+- 21-SOSP-LineFS-Efficient SmartNIC Offload of a Distributed File System with Pipeline Parallelism
+- 21-SOSP-Xenic-Smartnic-accelerated distributed transactions
+- 21-SOSP-PRISM-Rethinking the RDMA Interface for Distributed Systems
+- 21-NSDI-BMC-Accelerating Memcached using Safe In-kernel Caching and Pre-stack Processing
+- 22-OSDI-XRP-In-Kernel Storage Functions with eBPF
+- 22-NSDI-RDMA is Turing complete we just did not know it yet
+- **23-NSDI-Empowering Azure Storage with RDMA**
+- 24-EuroSys-Serialization-Deserialization-free State Transfer in Serverless Workflows
+
+#### Sub-Topic 4: CPU-Centric Dataplane OSes
+**[Questions]**
+- How to design a general-proposed dataplane OS with high-performance for various applications?
+- How to schedule CPU cores for high-efficiency?
+
+**[Related Works]**
+- **14-NSDI-mTCP-a Highly Scalable User-level TCP Stack for Multicore Systems**
+- 14-OSDI-IX-A Protected Dataplane Operating System for High Throughput and Low Latency
+- 17-SOSP-ZygOS-Achieving Low Tail Latency for Microsecond-scale Networked Tasks
+- 19-NSDI-Shenango-Achieving High CPU Efficiency for Latency-sensitive Datacenter Workloads
+- 19-NSDI-Shinjuku-Preemptive Scheduling for µsecond-scale Tail Latency
+- 20-OSDI-Caladan-Mitigating Interference at Microsecond Timescales
+- 21-SOSP-The Demikernel Datapath OS Architecture for Microsecond-scale Datacenter Systems
+- 22-ATC-AlNiCo-SmartNIC-accelerated Contention-aware Request Scheduling for Transaction Processing
+- **22-SIGCOMM-Towards us Tail Latency and Terabit Ethernet- Disaggregating the Host Network Stack**
+- 23-NSDI-RingLeader-Efficiently Offloading Intra-Server Orchestration to NICs
+- **24-NSDI-Making Kernel Bypass Practical for the Cloud with Junction**
+
+---
+
+<h3 id="2.2">2.2 SmartNIC Infrastructure</h3>
+
+Given the growing reliance on SmartNICs for processing network workloads at the end host, it is imperative to update the SmartNIC infrastructure. Below, we outline several new features that our community aims to develop or optimize. This includes programmablity, offloading frameworks, and virtualization/isolation.
+
+#### Sub-Topic 1: Programmabiliby
+**[Questions]**
+- How can we enable programmability in SmartNICs without compromising high performance?
+
+**[Related Works]**
+- 19-NSDI-FlowBlaze-Stateful Packet Processing in Hardware
+- 20-NSDI-Enabling programmable transport protocols in high-speed NIC
+- 20-OSDI-hXDP-Efficient Software Packet Processing on FPGA NICs
+- 22-ATC-Faster Software Packet Processing on FPGA NICs with eBPF Program Warping
+
+#### Sub-Topic 2: Offloading Frameworks
+**[Questions]**
+- Can we design offloading frameworks that automatically optimize and maximize SmartNIC performance?
+
+**[Related Works]**
+- 18-OSDI-Floem-A Programming System for NIC-Accelerated Network Applications
+- 19-SIGCOMM-Offloading distributed applications onto smartNICs using iPipe
+- 21-ASPLOS-Autonomous NIC Offloads
+
+#### Sub-Topic 3: Virtualization and Isolation
+**[Questions]**
+- How can we implement virtualization and isolation features for NICs in cloud environments?
+
+**[Related Works]**
+- 20-SIGCOMM-SmartNIC Performance Isolation with FairNIC-Programmable Networking for the Cloud
+- 22-NSDI-Collie-Finding Performance Anomalies in RDMA Subsystems
+- 22-NSDI-Isolation Mechanisms for High-Speed Packet-Processing Pipelines
+- 24-EuroSys-HD-IOV: SW-HW Co-designed I/O Virtualization with Scalability and Flexibility for Hyper-Density Cloud
+- 24-EuroSys-SmartNIC Security Isolation in the Cloud with S-NIC
