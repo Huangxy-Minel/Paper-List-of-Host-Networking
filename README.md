@@ -34,6 +34,7 @@ The page is basically divided into two parts: (a) a selected readings to constru
 It is recommended in the order of the list.
 
 <h3 id="1.1">1.1 Basic</h3>
+
 - 16-ATC-Design Guidelines for High Performance RDMA Systems
 - 18-SIGCOMM-Revisiting Network Support for RDMA
 - 19-NSDI-Datacenter RPCs can be General and Fast
